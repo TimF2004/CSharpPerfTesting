@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ESRIReader.Utilities {
+namespace CSharpPerfTesting {
 
 	static public class Extensions {
 	
@@ -38,6 +38,22 @@ namespace ESRIReader.Utilities {
 							 | (0x00FF000000000000) & (value << 40)
 							 | (0xFF00000000000000) & (value << 56));
 			return swapped;
+		}
+
+		public static int SwapBytesArRev(this int val)
+		{
+			byte[] data = BitConverter.GetBytes(val);
+			Array.Reverse(data);
+
+			return BitConverter.ToInt32(data, 0);
+		}
+
+		public static long SwapBytesArRev(this long val)
+		{
+			byte[] data = BitConverter.GetBytes(val);
+			Array.Reverse(data);
+
+			return BitConverter.ToInt64(data, 0);
 		}
 
 		/*

@@ -11,7 +11,7 @@ namespace CSharpPerfTestbed {
 		{
 			try {
 				TestRunner tr = new TestRunner();
-				tr.RunBitWiseTest(1000000000);
+				tr.RunSwapTest(10000000);
 
 			} catch (Exception ex) {
 				Console.WriteLine(ex.Message);
