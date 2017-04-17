@@ -15,11 +15,10 @@ namespace CSharpPerfTesting {
 
 		public static uint SwapBytes(this uint value)
 		{
-			uint swapped = (value & 0x000000FFU) << 24
-							| (value & 0x0000FF00U) << 8
-							| (value & 0x00FF0000U) >> 8
-							| (value & 0xFF000000U) >> 24;
-			return swapped;
+			return	(value & 0x000000ffU) << 24 |
+					(value & 0x0000ff00U) << 8 |
+					(value & 0x00ff0000U) >> 8 |
+					(value & 0xff000000U) >> 24;
 		}
 
 		public static long SwapBytes(this long value)
